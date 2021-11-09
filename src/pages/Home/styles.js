@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Slider from 'react-slick';
 
 export const Container = styled.aside`
   background-color: ${(props) => props.theme.colors.background};
@@ -10,13 +11,28 @@ export const Container = styled.aside`
 export const Search = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #ffffff;
   padding: 16px;
+  height: 100%;
 `;
 
 export const Logo = styled.img`
   margin: 15px;
+`;
+
+export const Title = styled.h1`
+  font-family: ${(props) => props.theme.fonts.fontFamily};
+  color: ${(props) => props.theme.colors.text};
+  font-size: 24px;
+  font-weight: bold;
+  margin: 16px 0;
+`;
+
+export const Carousel = styled(Slider)`
+  .slick-slide {
+    margin-right: 16px;
+  }
 `;
 
 export const Wrapper = styled.div`

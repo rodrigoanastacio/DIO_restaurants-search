@@ -1,13 +1,26 @@
 import React, { useState } from 'react';
+import Slider from 'react-slick';
 import TextField, { Input } from '@material/react-text-field';
 import MaterialIcon from '@material/react-material-icon';
 
-import { Container, Search, Logo, Wrapper, Map } from './styles';
+import { Container, Carousel, Search, Logo, Wrapper, Map, Title } from './styles';
+import { Card } from '../../components';
 
 import logo from '../../assets/logo.svg';
+import restaurante from '../../assets/restaurante-fake.png';
 
 const Home = () => {
   const [inputValue, setInputValue] = useState('');
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    autoplay: true,
+    speed: 300,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    adaptiveHeight: true,
+  };
 
   return (
     <Wrapper>
@@ -20,6 +33,14 @@ const Home = () => {
             trailingIcon={<MaterialIcon role="button" icon="search" />}>
             <Input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
           </TextField>
+          <Title>Na sua Área</Title>
+          <Carousel {...settings}>
+            <Card photo={restaurante} title="Restaurante 1" />
+            <Card photo={restaurante} title="Restaurante 2" />
+            <Card photo={restaurante} title="Restaurante 3" />
+            <Card photo={restaurante} title="Restaurante 4" />
+            <Card photo={restaurante} title="Restaurante 5" />
+          </Carousel>
         </Search>
       </Container>
       <Map />
