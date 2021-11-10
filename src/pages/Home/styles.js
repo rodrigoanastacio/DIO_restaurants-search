@@ -14,7 +14,6 @@ export const Search = styled.section`
   justify-content: flex-start;
   background-color: #ffffff;
   padding: 16px;
-  height: 100%;
 `;
 
 export const Logo = styled.img`
